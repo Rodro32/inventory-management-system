@@ -20,7 +20,8 @@ const userSchema = new Schema<TUser>({
     required: true,
   },
   needsPasswordChange:{
-    type: String,
+    type: Boolean,
+    default:false,
   },
   role:{
     type: String,

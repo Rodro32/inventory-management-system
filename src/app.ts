@@ -10,7 +10,7 @@ app.use(cors())
 
 
 app.use('/api/v1/users',UserRoute)
-app.use('/api/v1/organization',OrganizationRoute)
+app.use('/api/v1/organization', OrganizationRoute);
 
 
 app.get('/', (req:Request, res:Response) => {

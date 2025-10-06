@@ -3,7 +3,7 @@ export type TUser = {
   name:string;
   email:string;
   password: string;
-  needsPasswordChange: string;
+  needsPasswordChange: boolean;
   role: 'admin' | 'supplier' | 'customer';
   isDeleted: boolean;
 }
