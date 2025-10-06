@@ -2,11 +2,12 @@ import { TOrganization } from "./organization.interface";
 import { Organization } from "./organization.model";
 
 
-// const createOrganizationIntoDB = async(data:TOrganization) =>{
-//   const result = await Organization.create(data);
-//   return result;
-// }
+const getAllOrganizationsFromDB = async () => {
+  const organizations = await Organization.find({})
+  return organizations;
+};
 
-export const OrganizationServices = {
-  // createOrganizationIntoDB
-}
+export const OrganizationService = {
+  getAllOrganizationsFromDB,
+};
+
