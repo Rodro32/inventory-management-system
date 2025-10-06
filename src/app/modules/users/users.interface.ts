@@ -4,6 +4,6 @@ export type TUser = {
   email:string;
   password: string;
   needsPasswordChange: boolean;
-  role: 'admin' | 'supplier' | 'customer';
+  role: 'admin' | 'vendor';
   isDeleted: boolean;
 }

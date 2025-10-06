@@ -25,7 +25,7 @@ const userSchema = new Schema<TUser>({
   },
   role:{
     type: String,
-    enum:['admin' ,'supplier' , 'customer'],
+    enum:['admin' ,'vendor' ],
   },
   isDeleted:{
     type:Boolean,
