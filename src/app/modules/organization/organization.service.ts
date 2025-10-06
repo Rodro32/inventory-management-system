@@ -1,4 +1,3 @@
-import { TOrganization } from "./organization.interface";
 import { Organization } from "./organization.model";
 
 
