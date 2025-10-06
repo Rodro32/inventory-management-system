@@ -1,9 +1,11 @@
+import { Schema, Types } from "mongoose";
+
 export type TUser = {
   id: string;
-  name:string;
   email:string;
   password: string;
+  // userId:Types.ObjectId,
   needsPasswordChange: boolean;
   role: 'admin' | 'vendor';
-  isDeleted: boolean;
+  isDeleted ?: boolean ;
 }

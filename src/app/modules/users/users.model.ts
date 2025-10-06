@@ -7,14 +7,14 @@ const userSchema = new Schema<TUser>({
     required: true,
     unique: true,
   },
-  name:{
-    type: String,
-    required: true
-  },
   email:{
     type:String,
     required:true,
   },
+  //  userId:{
+  //    type:Schema.Types.ObjectId,
+  //    ref:'users'
+  //  },
   password:{
     type: String,
     required: true,
