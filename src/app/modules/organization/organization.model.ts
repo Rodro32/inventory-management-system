@@ -2,15 +2,11 @@ import {  Schema, model } from "mongoose";
 import { TOrganization } from "./organization.interface";
 
 const OrganizationSchema = new Schema<TOrganization>({
-  userId:{
-    type:Schema.Types.ObjectId,
+  user:{
+    type: Schema.Types.ObjectId,
+    required: [true,'userId required'],
+    unique: true,
     ref:'user',
-    required:true
-  },
-  supplierId:{
-    type:Schema.Types.ObjectId,
-    ref:'supplier',
-    required:true,
   },
   id:{
     type:String,
@@ -23,7 +19,6 @@ const OrganizationSchema = new Schema<TOrganization>({
   },
   address:{
     type:String,
-    required:true
   },
   subscriptionPlan:{
     type: String,
@@ -31,7 +26,6 @@ const OrganizationSchema = new Schema<TOrganization>({
   },
   trialEnd: {
     type: Date,
-    required: true,
   },
 })
 

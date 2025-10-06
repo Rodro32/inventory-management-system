@@ -1,11 +1,11 @@
-import { TUser } from "./users.interface";
-import { User } from "./users.model";
+import { TOrganization } from "../organization/organization.interface";
+import { Organization } from "../organization/organization.model";
 
-const createUserIntoDB = async(user:TUser) =>{
-  const result = await User.create(user);
+const createOrganizationIntoDB = async (data: TOrganization) => {
+  const result = await Organization.create(data);
   return result;
-}
+};
 
-export const userServices = {
-  createUserIntoDB,
-}
+export const UserService = {
+  createOrganizationIntoDB,
+};

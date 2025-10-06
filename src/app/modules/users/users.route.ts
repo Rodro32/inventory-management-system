@@ -1,6 +1,8 @@
-import express from 'express'
-import { UserControllers} from './users.controller';
+import express from 'express';
+import { UserController } from './users.controller';
+
 const router = express.Router();
 
-router.post('/create-user',UserControllers.createUser);
+router.post('/create-organization', UserController.createOrganization);
+
 export const UserRoute = router;

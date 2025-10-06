@@ -1,8 +1,7 @@
-import { ObjectId } from "mongoose"
+import { ObjectId, Types } from "mongoose"
 
 export type TOrganization = {
-  userId : ObjectId,
-  supplierId:ObjectId,
+  user: Types.ObjectId,
   id:String,
   name:String,
   address:String,
