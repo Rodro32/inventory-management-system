@@ -10,10 +10,6 @@ const userSchema = new Schema<TUser>({
   email:{
     type:String,
   },
-  //  userId:{
-  //    type:Schema.Types.ObjectId,
-  //    ref:'users'
-  //  },
   password:{
     type: String,
     required: true,

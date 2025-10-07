@@ -3,7 +3,6 @@ import { UserControllers } from './users.controller';
 
 const router = express.Router();
 
-// router.post('/create-user',UserControllers.createOrganization);
 router.post('/create-admin',UserControllers.createAdmin);
 router.post('/create-vendor', UserControllers.createVendor);
 
