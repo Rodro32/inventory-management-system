@@ -1,11 +1,53 @@
+import { Admin } from "../admin/admin.model";
 import { TOrganization } from "../organization/organization.interface";
 import { Organization } from "../organization/organization.model";
+import { TAdmin } from "./../admin/admin.interface";
+import { TUser } from "./users.interface";
+import { User } from "./users.model";
 
-const createOrganizationIntoDB = async (data: TOrganization) => {
-  const result = await Organization.create(data);
-  return result;
+
+
+const createAdminIntoDb = async (password: string, payload: TAdmin) => {
+  const userData: Partial<TUser> = {};
+  console.log(userData);
+  
+  userData.role = "admin";
+  userData.password = password;
+  userData.email = payload.email;
+  userData.id = "280";
+  const newUser = await User.create(userData);
+  if (!newUser) {
+    throw new Error("user created failed");
+  }
+
+  payload.userId = newUser._id;
+
+  const createNewAdmin = await Admin.create(payload);
+  return createNewAdmin;
 };
 
-export const UserService = {
-  createOrganizationIntoDB,
+
+
+const createVendorIntoDB = async (password: string, payload: TOrganization) => {
+  const userData: Partial<TUser> = {};
+  console.log(userData);
+  
+  userData.role = "vendor";
+  userData.password = password;
+  userData.id = "90";
+  const newUser = await User.create(userData);
+  if (!newUser) {
+    throw new Error("user created failed");
+  }
+
+  payload.user = newUser._id;
+
+  const createOrganization = await Organization.create(payload);
+  return createOrganization;
 };
+
+export const UserServices = {
+  createVendorIntoDB,
+  createAdminIntoDb,
+};
+

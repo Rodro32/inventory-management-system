@@ -1,8 +1,9 @@
 import express from 'express';
-import { UserController } from './users.controller';
+import { UserControllers } from './users.controller';
 
 const router = express.Router();
 
-router.post('/create-organization', UserController.createOrganization);
+router.post('/create-admin',UserControllers.createAdmin);
+router.post('/create-vendor', UserControllers.createVendor);
 
 export const UserRoute = router;
