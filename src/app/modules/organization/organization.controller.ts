@@ -1,23 +1,19 @@
 import { Request, Response } from "express";
-import { OrganizationServices } from "./organization.service";
+import { OrganizationService } from "./organization.service";
 
-const createOrganization = async (req: Request, res: Response) => {
+
+const getAllOrganizations = async (req: Request, res: Response) => {
   try {
-    const data = req.body;
+    const organizations = await  OrganizationService.getAllOrganizationsFromDB();
 
-    
-    const result = await OrganizationServices.createOrganizationIntoDB(data);
-
-    
-    return res.status(201).json({
+    return res.status(200).json({
       success: true,
-      message: "Organization created successfully",
-      data: result,
+      message: "Organizations fetched successfully",
+      data: organizations,
     });
   } catch (error: any) {
-    console.error("Error creating organization:", error);
+    console.error("Error fetching organizations:", error);
 
-    
     return res.status(500).json({
       success: false,
       message: error.message || "Internal Server Error",
@@ -25,6 +21,7 @@ const createOrganization = async (req: Request, res: Response) => {
   }
 };
 
-export const OrganizationControllers = {
-  createOrganization,
+export const OrganizationController = {
+  getAllOrganizations,
 };
+

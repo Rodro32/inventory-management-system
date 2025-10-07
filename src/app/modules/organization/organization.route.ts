@@ -1,6 +1,9 @@
-import express from 'express'
-import { OrganizationControllers } from './organization.controller';
+import express from "express";
+import { OrganizationController } from "./organization.controller";
+
 const router = express.Router();
 
-router.post('/create-vendor',OrganizationControllers.createOrganization);
+
+router.get("/", OrganizationController.getAllOrganizations);
+
 export const OrganizationRoute = router;

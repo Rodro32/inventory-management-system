@@ -9,7 +9,6 @@ const userSchema = new Schema<TUser>({
   },
   email:{
     type:String,
-    required:true,
   },
   //  userId:{
   //    type:Schema.Types.ObjectId,
